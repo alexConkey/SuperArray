@@ -9,6 +9,9 @@ public class SuperArray{
     return size;
   }
   public boolean add(String element){
+    if (data.length =< size){
+      resize();
+    }
     data[size] = element;
     size++;
   }
