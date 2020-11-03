@@ -16,6 +16,15 @@ public class SuperArray{
     return data[index];
   }
   public String set(int index, String element){
+    String oldElement = data[index];
     data[index] = element;
+    return oldElement;
+  }
+  private void resize(){
+    tempData = new String[size+10];
+    for (int i = 0; i < size; i++){
+      tempData[i] = data[i];
+    }
+    data = tempData;
   }
 }
