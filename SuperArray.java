@@ -31,4 +31,28 @@ public class SuperArray{
     }
     data = tempData;
   }
+  public boolean isEmpty(){
+    return (size==0);
+  }
+  public void clear(){
+    data = new String[10];
+    size = 0;
+  }
+
+  public String toString(){
+    str = "[";
+    for (int i = 0; 0 < size-1; i++){
+      str += data[i] + ", ";
+    }
+    str += data[size-1] + "]";
+    return str;
+  }
+  public boolean contains(String s){
+    for (int i = 0; i < size; i++){
+      if (data[i] == s){
+        return true;
+      }
+    }
+    return false;
+  }
 }
