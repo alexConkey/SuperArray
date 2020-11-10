@@ -40,7 +40,7 @@ public class SuperArray{
   }
 
   public String toString(){
-    str = "[";
+    String str = "[";
     for (int i = 0; 0 < size-1; i++){
       str += data[i] + ", ";
     }
@@ -54,5 +54,59 @@ public class SuperArray{
       }
     }
     return false;
+  }
+  public void add(int index, String element){
+    int afterIndex = 0;
+    String[] tempData = new String[size+10];
+    for(int i = 0; i < size+1; i++){
+      if(i == index){
+        afterIndex = 1;
+        tempData[i] = element;
+        tempData[i+1]= data[i];
+      }else{
+        tempData[i+afterIndex] = data[i];
+      }
+    }
+    data = tempData;
+    size++;
+  }
+  public String remove(int index){
+    String removed = data[index];
+    int afterIndex = 0;
+    String[] tempData = new String[size+10];
+    for(int i = 0; i < size-1; i++){
+      if(i == index){
+        afterIndex = 1;
+        tempData[i] = data[i+1];
+      }else{
+        tempData[i] = data[i+afterIndex];
+      }
+    }
+    data = tempData;
+    size--;
+    return removed;
+  }
+  public int indexOf(String s){
+    for(int i = 0; i < size; i++){
+      if(s.equals(data[i])){
+        return i;
+      }
+    }
+    return -1;
+  }
+  public String[] toArray(){
+    String[] tempData = new String[size];
+    for (int i = 0; i < size; i++){
+      tempData[i] = data[i];
+    }
+    return tempData;
+  }
+  public int lastIndexOf(String value){
+    for (int i = size-1; i >= 0; i--){
+      if(value.equals(data[i])){
+        return i;
+      }
+    }
+    return -1;
   }
 }
