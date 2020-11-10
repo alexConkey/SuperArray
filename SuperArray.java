@@ -110,7 +110,7 @@ public class SuperArray{
     return -1;
   }
   public boolean equals(SuperArray other){
-    if size = other.size(){
+    if (size == other.size()){
       for (int i = 0; i<size; i++){
         if (data[i] != other.get(i)){
           return false;
