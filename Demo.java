@@ -30,7 +30,7 @@ public class Demo{
         finalSA.add(b.get(i));
       }
       for(int i = b.size(); i<a.size(); i++){
-        finalSa.add(a.get(i));
+        finalSA.add(a.get(i));
       }
     }else{
       for(int i = 0; i<a.size(); i++){
@@ -38,9 +38,10 @@ public class Demo{
         finalSA.add(b.get(i));
       }
       for(int i = a.size(); i<b.size(); i++){
-        finalSa.add(b.get(i));
+        finalSA.add(b.get(i));
       }
     }
+    return finalSA;
   }
 
 
