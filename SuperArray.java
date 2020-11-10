@@ -56,6 +56,9 @@ public class SuperArray{
     return false;
   }
   public void add(int index, String element){
+    if (data.length <= size+1){
+      resize();
+    }
     int afterIndex = 0;
     String[] tempData = new String[size+10];
     for(int i = 0; i < size+1; i++){
