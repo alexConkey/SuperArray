@@ -1,8 +1,11 @@
 public class SuperArray{
   private String[] data;
   private int size;
-  public SuperArray(){
-    data = new String[10];
+  public SuperArray(int initialCapacity){
+    if (initialCapacity<0){
+      throw new IllegalArgumentException("initialCapacity " + initialCapacity + " cannot be negative");
+    }
+    data = new String[initialCapacity];
     size = 0;
   }
   public int size(){
@@ -17,6 +20,7 @@ public class SuperArray{
     return true;
   }
   public String get(int index){
+    
     return data[index];
   }
   public String set(int index, String element){
