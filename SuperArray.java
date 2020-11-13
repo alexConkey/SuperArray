@@ -65,6 +65,9 @@ public class SuperArray{
     return false;
   }
   public void add(int index, String element){
+    if (index < 0 || index > size()){
+      throw new IndexOutOfBoundsException("Index " + index + " must be greater than or equal to 0 and less than size");
+    }
     if (data.length <= size+1){
       resize();
     }
@@ -83,6 +86,9 @@ public class SuperArray{
     size++;
   }
   public String remove(int index){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " + index + " must be greater than or equal to 0 and less than or equal to size");
+    }
     String removed = data[index];
     int afterIndex = 0;
     String[] tempData = new String[size+10];
