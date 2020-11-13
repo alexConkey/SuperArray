@@ -20,7 +20,9 @@ public class SuperArray{
     return true;
   }
   public String get(int index){
-    
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " + index + " must be greater than or equal to 0 and less than or equal to size")
+    }
     return data[index];
   }
   public String set(int index, String element){
